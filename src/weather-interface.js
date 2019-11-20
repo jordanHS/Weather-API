@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import './styles.css';
-import { WeatherService } from '../weather-service';
+import { WeatherService } from './weather-service';
 
 $(document).ready(function() {
   $('#weatherLocation').click(function() {
@@ -18,7 +18,7 @@ $(document).ready(function() {
 
   const getElements = function(response) {
       $('.showHumidity').text(`The humidity ${city} is ${response.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degress.`);
+      $('.showTemp').text(`The temperature in Fahreinheit is ${((response.main.temp-273.15) * (9/5) + 32).toFixed(1)} degress.`);
   
     }
   });
