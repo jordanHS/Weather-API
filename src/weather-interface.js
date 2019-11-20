@@ -17,9 +17,9 @@ $(document).ready(function() {
     })();
 
   const getElements = function(response) {
-      $('.showHumidity').text(`The humidity ${city} is ${response.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Fahreinheit is ${((response.main.temp-273.15) * (9/5) + 32).toFixed(1)} degrees.`);
-  
+      $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
+      $('.showTemp').text(`The temperature in Fahreinheit is ${((response.main.temp-273.15) * (9/5) + 32).toFixed(1)} degrees with ${response.weather[0].description}`);
+      console.log(response.weather);
     }
   });
 });
